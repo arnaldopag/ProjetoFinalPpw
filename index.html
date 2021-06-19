@@ -9,15 +9,12 @@
     <title>Anotador de series</title>
 </head>
 <body>
-    <header>
-        <h1>Anotador de séries</h1>
-    </header>
     <main>
         <div class="form">
             <form>
                 <input class="form-control" type="text" placeholder="Nome">
-                <input class="form-control" type="text" placeholder="Temporada">
-                <input class="form-control" type="text" placeholder="Episódio">
+                <input class="form-control" type="number" placeholder="Temporada" min="1">
+                <input class="form-control" type="number" placeholder="Episódio" min="1">
                 <input class="form-control" type="text" placeholder="Link para assistir">
                 <input class="form-control" type="text" placeholder="Link de uma imagem">
             </form>
@@ -25,20 +22,34 @@
         </div>
         <div class="page">
             <div class="imagem">
-                <img src="https://projeto-rai-betha.s3.sa-east-1.amazonaws.com/servico-1/cp1.jpg" alt="imagem">
+                <img src="https://i.pinimg.com/originals/ac/81/ef/ac81ef0f8197d2542949c6fbba3f367e.jpg" alt="imagem">
             </div>
             <div class="texts">
-                    <span>Serie: </span>
-                    <span>Temporada: </span>
-                    <span>Episódio: </span>
-                    <span>Link: </span>
+                    <p><span>Serie</span>: Naruto</p>
+                    <p><span>Temporada: </span>1</p>
+                    <p><span>Episódio: </span>2</p>
+                    <p><span>Link</span>: assistir.com</p>
             </div>
             <div class="buttons">
                 <button class="btn btn-danger">Excluir</button>
                 <button class="btn btn-warning">Editar</button>
             </div>
         </div>
-
+        <div class="page">
+            <div class="imagem">
+                <img src="https://i.pinimg.com/originals/ac/81/ef/ac81ef0f8197d2542949c6fbba3f367e.jpg" alt="imagem">
+            </div>
+            <div class="texts">
+                    <p><span>Serie</span>: Naruto</p>
+                    <p><span>Temporada:  </span><input type="number" class="number" min="1"></p>
+                    <p><span>Episódio:  </span><input type="number" class="number" min="1"></p>
+                    <p><span>Link</span>: assistir.com</p>
+            </div>
+            <div class="buttons">
+                <button class="btn btn-danger">Excluir</button>
+                <button class="btn btn-success">Concluir</button>
+            </div>
+        </div>
     </main>
 </body>
 </html>

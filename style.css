@@ -7,22 +7,6 @@ body{
     background-image: url(https://i.pinimg.com/originals/2f/88/a9/2f88a9427474343f7275e3b8f6fcc2e1.jpg);
 }
 
-header{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    flex-direction: column;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.438);
-    height: 150px;
-    border-radius: 50px;
-    margin-left: 250px;
-    margin-right: 250px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
 header h1{
     font-size: 70px;
 }
@@ -66,7 +50,7 @@ header h1{
     padding-left: 20px;
 }
 
-.texts span{
+.texts p{
     margin: 5px;
     font-weight: bold;
 }
@@ -81,5 +65,9 @@ header h1{
 }
 
 .buttons button{
-    width: 75px;
+    width: auto;
+}
+
+.number{
+    width: 40px;
 }
