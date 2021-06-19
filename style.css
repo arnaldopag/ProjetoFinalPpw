@@ -6,14 +6,10 @@
 body{
     background-image: url(https://i.pinimg.com/originals/2f/88/a9/2f88a9427474343f7275e3b8f6fcc2e1.jpg);
 }
-
-header h1{
-    font-size: 70px;
-}
 .form{
     margin: 40px;
     background-color: rgba(255, 255, 255, 0.685);
-    height: 300px;
+    height: 330px;
     display: flex;
     justify-content:center;
     align-items: center;
@@ -37,9 +33,11 @@ header h1{
 }
 
 .imagem img{
+    height: 100px;
     width: 100px;
     margin: 25px;
     border-radius: 40px;
+    overflow: hidden;
 }
 
 .texts{

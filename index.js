@@ -6,7 +6,7 @@ function listarRegistros() {
     })
     dados.then(function (response) {
         var pages = document.getElementById('pages');
-        /* pages.textContent="" */
+        pages.textContent=""
         for (i = 0; i < response.length; i++) {
             var page = document.createElement('div')
             var image = document.createElement('div')
@@ -48,6 +48,8 @@ function listarRegistros() {
             botaoExcluir.classList.add('btn-danger')
             botaoEditar.appendChild(document.createTextNode('Editar'))
             botaoExcluir.appendChild(document.createTextNode('Excluir'))
+            botaoExcluir.onclick = excluir
+            botaoExcluir.value= response[i]._id
             buttons.appendChild(botaoExcluir)
             buttons.appendChild(botaoEditar)
             //junta tudo
@@ -59,8 +61,6 @@ function listarRegistros() {
         }
     })
 }
-
-var listaSeries = [];
 
 function cadastro(evento) {
     var serieNome = document.getElementById('nome').value;
@@ -87,6 +87,18 @@ function cadastro(evento) {
     requisicao.then(function (resposta) {
         console.log(resposta.statusText)
         console.log(resposta.status)
+        listarRegistros()
+    })
+}
+
+function excluir(evento){
+    fetch(url+"/"+evento.target.value, {
+        method: 'DELETE',
+    }).then(function (resposta) {
+        return resposta.json()
+    }).then(function (response) {
+        listarRegistros()
+        console.log(response)
     })
 }
 listarRegistros()
