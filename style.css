@@ -17,7 +17,8 @@ header{
     flex-direction: column;
     color: black;
     background-color: rgba(255, 255, 255, 0.438);
-    height: 200px;
+    height: 150px;
+    border-radius: 50px;
     margin-left: 250px;
     margin-right: 250px;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -27,16 +28,28 @@ header h1{
 }
 .form{
     margin: 40px;
+    background-color: rgba(255, 255, 255, 0.685);
+    height: 300px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+.form input{
+    margin: 5px;
+    width: 250px;
 }
 .page{
     margin: 40px;
-    border: solid 5px rgba(187, 43, 43, 0.5);
+    border: solid 5px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     width:1280;
     height: 150px;
     display: flex;
     justify-content: flex-start;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.685);
+    font-size: 17px;
+    overflow:hidden;
 }
 
 .imagem img{
