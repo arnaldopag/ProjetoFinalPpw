@@ -1,4 +1,4 @@
-const url = 'https://projeto-final-ppw.herokuapp.com/api/115928'
+const url = 'https://projeto-final-ppw.herokuapp.com/api/103025'
 
 function listarRegistros() {
     var dados = fetch(url).then(function (response) {
@@ -62,6 +62,61 @@ function listarRegistros() {
             //coloca na view
             pages.appendChild(page)
         }
+    })
+}
+
+function cadastrar() {
+    var serieNome = document.getElementById('nome').value;
+    var temp = document.getElementById('temp').value;
+    var eps = document.getElementById('eps').value;
+    var link = document.getElementById('link').value;
+    var img = document.getElementById('img').value;
+    let serie = {
+        nome: serieNome,
+        temporada: temp,
+        episodio: eps,
+        link: link,
+        imagem: img
+    }
+    const texto = JSON.stringify(serie);
+    const options = {
+        method: "POST",
+        body: texto,
+        headers: {
+            "content-type": "application/json"
+        }
+    }
+    const requisicao = fetch(url, options)
+    requisicao.then(function (resposta) {
+        listarRegistros()
+    })
+}
+
+function editar(evento){
+    const id = evento.target.value
+    var img = document.getElementById("imagem-"+id).value
+    var serieNome = document.getElementById("nome-"+id).value
+    var temp = document.getElementById("temporada-"+id).value
+    var eps = document.getElementById("ep-"+id).value
+    var link = document.getElementById("link-"+id).value
+    let serie = {
+        nome: serieNome,
+        temporada: temp,
+        episodio: eps,
+        link: link,
+        imagem: img
+    }
+    const texto = JSON.stringify(serie);
+    const options = {
+        method: "PUT",
+        body: texto,
+        headers: {
+            "content-type": "application/json"
+        }
+    }
+    const requisicao = fetch(url+"/"+id, options)
+    requisicao.then(function (resposta) {
+        listarRegistros()
     })
 }
 
@@ -137,65 +192,6 @@ function changeToEditar(evento) {
     })
 }
 
-function editar(evento){
-    const id = evento.target.value
-    var img = document.getElementById("imagem-"+id).value
-    var serieNome = document.getElementById("nome-"+id).value
-    var temp = document.getElementById("temporada-"+id).value
-    var eps = document.getElementById("ep-"+id).value
-    var link = document.getElementById("link-"+id).value
-    let serie = {
-        nome: serieNome,
-        temporada: temp,
-        episodio: eps,
-        link: link,
-        imagem: img
-    }
-    const texto = JSON.stringify(serie);
-    const options = {
-        method: "PUT",
-        body: texto,
-        headers: {
-            "content-type": "application/json"
-        }
-    }
-    const requisicao = fetch(url+"/"+id, options)
-    requisicao.then(function (resposta) {
-        console.log(resposta.statusText)
-        console.log(resposta.status)
-        listarRegistros()
-    })
-}
-
-function cadastro() {
-    var serieNome = document.getElementById('nome').value;
-    var temp = document.getElementById('temp').value;
-    var eps = document.getElementById('eps').value;
-    var link = document.getElementById('link').value;
-    var img = document.getElementById('img').value;
-    let serie = {
-        nome: serieNome,
-        temporada: temp,
-        episodio: eps,
-        link: link,
-        imagem: img
-    }
-    const texto = JSON.stringify(serie);
-    const options = {
-        method: "POST",
-        body: texto,
-        headers: {
-            "content-type": "application/json"
-        }
-    }
-    const requisicao = fetch(url, options)
-    requisicao.then(function (resposta) {
-        console.log(resposta.statusText)
-        console.log(resposta.status)
-        listarRegistros()
-    })
-}
-
 function excluir(evento) {
     fetch(url + "/" + evento.target.value, {
         method: 'DELETE',
@@ -203,7 +199,6 @@ function excluir(evento) {
         return resposta.json()
     }).then(function (response) {
         listarRegistros()
-        console.log(response)
     })
 }
 listarRegistros()
