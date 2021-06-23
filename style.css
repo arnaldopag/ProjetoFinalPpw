@@ -4,7 +4,11 @@
     font-family: sans-serif;
 }
 body{
-    background-image: url(https://i.pinimg.com/originals/2f/88/a9/2f88a9427474343f7275e3b8f6fcc2e1.jpg);
+    background-image: linear-gradient(to top,
+    rgba(0,0,0,.8),
+    rgba(0,0,0,.4),
+    rgba(0,0,0,.8))
+    ,url(https://i.pinimg.com/originals/2f/88/a9/2f88a9427474343f7275e3b8f6fcc2e1.jpg)
 }
 .form{
     margin: 40px;
