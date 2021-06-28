@@ -21,6 +21,7 @@ function listarRegistros() {
             var img = document.createElement('img')
             img.alt = "imagem"
             img.src = response[i].imagem
+            img.draggable=false
             image.appendChild(img)
             //textos
             var nome = document.createElement('p')
@@ -140,6 +141,7 @@ function changeToEditar(evento) {
         img.alt = "imagem"
         img.src = response.imagem
         img.id = "imagem-"+response._id
+        img.draggable=false
         image.appendChild(img)
         //textos
         var nome = document.createElement('input')
